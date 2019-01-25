@@ -17,28 +17,15 @@ spring:
     password: root
 
 mybatis-plus:
-  # ����Ƿ���src/main/javaĿ¼�� classpath:/com/yourpackage/*/mapper/*Mapper.xml
-  # ����Ƿ���resourceĿ¼ classpath:/mapper/*Mapper.xml
   mapper-locations: classpath:/mapper/*Mapper.xml
-  #ʵ��ɨ�裬���package�ö��Ż��߷ֺŷָ�
+  #实体扫描，多个package用逗号或者分号分隔
   typeAliasesPackage: com.gzg.*.entity
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
-    #��������  0:"���ݿ�ID����", 1:"�û�����ID",2:"ȫ��ΨһID (��������ΨһID)", 3:"ȫ��ΨһID UUID";
     id-type: 3
-    #�ֶβ��� 0:"�����ж�",1:"�� NULL �ж�"),2:"�ǿ��ж�"
     field-strategy: 2
-    #�շ��»���ת��
     db-column-underline: true
-    #mp2.3+ ȫ�ֱ�ǰ׺ mp_
-    #table-prefix: mp_
-    #ˢ��mapper ��������
     refresh-mapper: true
-    #���ݿ��д�»���ת��
-    #capital-mode: true
-    # Sequence���нӿ�ʵ��������
-    #key-generator: com.baomidou.mybatisplus.incrementer.OracleKeyGenerator
-    #�߼�ɾ�����ã�����3�����ã�
     logic-delete-value: 1
     logic-not-delete-value: 0
