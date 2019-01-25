@@ -6,6 +6,7 @@ server:
 spring:
   profiles:
     active: prod
+#热加载
   devtools:
     restart:
       enabled: false
