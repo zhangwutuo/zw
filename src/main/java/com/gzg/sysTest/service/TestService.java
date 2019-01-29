@@ -18,4 +18,6 @@ public interface TestService extends IService<Test> {
     List<Test> selectListByWrapper(Wrapper wrapper);
 
     List<Test> selectListBySQL();
+
+    List<Object> selectObjs(Wrapper<Test> queryWrapper);
 }

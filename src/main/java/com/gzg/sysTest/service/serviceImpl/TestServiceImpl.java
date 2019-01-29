@@ -1,6 +1,7 @@
 package com.gzg.sysTest.service.serviceImpl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.gzg.sysTest.entity.Test;
 import com.gzg.sysTest.mapper.TestMapper;
 import com.gzg.sysTest.service.TestService;
@@ -33,5 +34,10 @@ public class TestServiceImpl extends ServiceImpl<TestMapper, Test> implements Te
     @Override
     public List<Test> selectListBySQL() {
         return testMapper.selectListBySQL();
+    }
+
+    @Override
+    public List<Object> selectObjs(Wrapper<Test> queryWrapper) {
+        return testMapper.selectObjs(queryWrapper);
     }
 }

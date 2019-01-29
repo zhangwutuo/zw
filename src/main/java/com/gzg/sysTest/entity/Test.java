@@ -1,8 +1,7 @@
 package com.gzg.sysTest.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.io.Serializable;
 
 /**
@@ -22,6 +21,27 @@ public class Test implements Serializable {
     private String id;
 
     private String name;
+    @TableLogic
+    private Integer deleted;
+
+    @Version
+    private Integer version;
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public Integer getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Integer deleted) {
+        this.deleted = deleted;
+    }
 
     public String getId() {
         return id;
@@ -38,11 +58,27 @@ public class Test implements Serializable {
         this.name = name;
     }
 
+    public Test(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Test() {
+    }
+
+    public Test(String id, String name, Integer deleted, Integer version) {
+        this.id = id;
+        this.name = name;
+        this.deleted = deleted;
+        this.version = version;
+    }
+
     @Override
     public String toString() {
         return "Test{" +
-        "id=" + id +
-        ", name=" + name +
-        "}";
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", deleted=" + deleted +
+                '}';
     }
 }
