@@ -3,6 +3,7 @@ package com.gzg.sysTest.service;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.gzg.sysTest.entity.Test;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 

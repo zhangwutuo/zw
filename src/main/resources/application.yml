@@ -24,15 +24,26 @@ spring:
             password: root
             driver-class-name: com.mysql.cj.jdbc.Driver
             url: jdbc:mysql://127.0.0.1:3306/guozg?useUnicode=true&characterEncoding=utf8
-         #......省略
-         #以上会配置一个默认库master，一个组slave下有两个子库slave_1,slave_2
+  redis:
+      database: 0
+      host: 47.100.99.68
+      port: 6379
+      password:
+      pool:
+        max:
+          active: 8
+          wait: -1
+          idle: 8
+        min:
+          idle: 0
+      timeout: 5000
 
 #database
 #  datasource:
 #    driver-class-name: com.mysql.cj.jdbc.Driver
 #    url: jdbc:mysql://47.100.99.68:3306/guozg?useUnicode=true&characterEncoding=utf8
- #   username: guozg
- #   password: guozg
+#   username: guozg
+#   password: guozg
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml

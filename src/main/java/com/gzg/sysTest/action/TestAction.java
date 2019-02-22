@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.gzg.sysTest.entity.Test;
+import com.gzg.sysTest.jedis.JedisCache;
 import com.gzg.sysTest.service.TestService;
 import org.apache.ibatis.jdbc.SQL;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,12 +37,24 @@ public class TestAction {
     @Autowired
     private TestService testService;
 
+    @Autowired
+    private JedisCache jedisCache;
+
     @RequestMapping("/query")
     public List<Test> query(){
         return testService.list();
     }
 
+    @RequestMapping("/setjedis")
+    public String setJedis(){
+        jedisCache.set();
+        return "success";
+    }
 
+    @RequestMapping("/getjedis")
+    public String getjedis(){
+        return jedisCache.get();
+    }
     @RequestMapping("/dtsql")
     public String dtsql(){
         System.out.println(
