@@ -1,11 +1,14 @@
-#app
-server:
-    port: 8081
-
 #spring
 spring:
   profiles:
-    active: prod
+    active: dev
+
+---
+#development environment
+server:
+  port: 8081
+spring:
+  profiles: dev
 #热加载
   devtools:
     restart:
@@ -37,6 +40,44 @@ spring:
         min:
           idle: 0
       timeout: 5000
+---
+#test environment
+server:
+  port: 8083
+spring:
+  profiles: test
+#热加载
+  devtools:
+    restart:
+      enabled: false
+  datasource:
+      dynamic:
+        primary: master #设置默认的数据源或者数据源组,默认值即为master
+        datasource:
+          master:
+            username: guozg
+            password: guozg
+            driver-class-name: com.mysql.cj.jdbc.Driver
+            url: jdbc:mysql://47.100.99.68:3306/guozg?useUnicode=true&characterEncoding=utf8
+          slave_1:
+            username: root
+            password: root
+            driver-class-name: com.mysql.cj.jdbc.Driver
+            url: jdbc:mysql://127.0.0.1:3306/guozg?useUnicode=true&characterEncoding=utf8
+  redis:
+      database: 0
+      host: 47.100.99.68
+      port: 6379
+      password:
+      pool:
+        max:
+          active: 8
+          wait: -1
+          idle: 8
+        min:
+          idle: 0
+      timeout: 5000
+
 
 #database
 #  datasource:
