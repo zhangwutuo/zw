@@ -21,15 +21,15 @@ spring:
             username: guozg
             password: guozg
             driver-class-name: com.mysql.cj.jdbc.Driver
-            url: jdbc:mysql://47.100.99.68:3306/guozg?useUnicode=true&characterEncoding=utf8
+            url: jdbc:mysql://XXXXXX:3306/guozg?useUnicode=true&characterEncoding=utf8
           slave_1:
             username: root
             password: root
             driver-class-name: com.mysql.cj.jdbc.Driver
-            url: jdbc:mysql://127.0.0.1:3306/guozg?useUnicode=true&characterEncoding=utf8
+            url: jdbc:mysql://XXXXXXX:3306/guozg?useUnicode=true&characterEncoding=utf8
   redis:
       database: 0
-      host: 47.100.99.68
+      host: XXXXXX
       port: 6379
       password:
       pool:
@@ -58,17 +58,17 @@ spring:
             username: guozg
             password: guozg
             driver-class-name: com.mysql.cj.jdbc.Driver
-            url: jdbc:mysql://47.100.99.68:3306/guozg?useUnicode=true&characterEncoding=utf8
+            url: jdbc:mysql://XXXXXXX/guozg?useUnicode=true&characterEncoding=utf8
           slave_1:
             username: root
             password: root
             driver-class-name: com.mysql.cj.jdbc.Driver
-            url: jdbc:mysql://127.0.0.1:3306/guozg?useUnicode=true&characterEncoding=utf8
+            url: jdbc:mysql://XXXXXXXX:3306/guozg?useUnicode=true&characterEncoding=utf8
   redis:
       database: 0
-      host: 47.100.99.68
+      host: XXXXXXX
       port: 6379
-      password:
+      password: 123456
       pool:
         max:
           active: 8
