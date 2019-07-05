@@ -198,4 +198,7 @@ public class TestAction {
                 .lambda().like(Test::getName,"z")
         );
     }
+
+    @RequestMapping("/zw")
+    public String zw(){return "me";}
 }
